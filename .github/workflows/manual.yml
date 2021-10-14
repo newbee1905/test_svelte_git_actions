@@ -1,0 +1,20 @@
+name: Push commit
+on: push
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create report file
+        run: date +%s > report.txt
+      - name: Commit report
+        run: |
+          git config --global user.name 'newbee1905'
+          git config --global user.email 'beenewminh1905'
+          cd public/
+          git init
+          git remote add origin https://github.com/newbee1905/test_svelte_git_actions.git
+          git branch -M web
+          git add .
+          git commit -m "update build"
+          git push -u origin web --force
