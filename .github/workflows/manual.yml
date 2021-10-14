@@ -10,7 +10,7 @@ jobs:
       - name: Commit report
         run: |
           git config --global user.name 'newbee1905'
-          git config --global user.email 'beenewminh1905'
+          git config --global user.email 'beenewminh@outlook.com'
           cd public/
           git init
           git remote add origin https://github.com/newbee1905/test_svelte_git_actions.git
